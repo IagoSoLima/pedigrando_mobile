@@ -1,9 +1,11 @@
 import {Dimensions} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styled from 'styled-components/native';
+// const {StatusBarManager} = NativeModules;
+const {width, height} = Dimensions.get('window');
 
-const {width, height} = Dimensions.get('screen');
 export const Container = styled.SafeAreaView`
-  flex: 1;
+  width: 100%;
   height: ${height};
   align-items: center;
   justify-content: flex-start;
@@ -16,6 +18,11 @@ export const Content = styled.View`
   align-items: center;
   justify-content: space-evenly;
   margin-top: -${height * 0.1};
+`;
+
+export const KeyboardScrollView = styled(KeyboardAwareScrollView)`
+  flex: 1;
+  height: ${height};
 `;
 
 export const ContentTop = styled.View`
@@ -55,7 +62,9 @@ export const TextOrange = styled.Text`
   font-size: 15;
 `;
 
-export const ButtonRemerberPassword = styled.TouchableOpacity`
+export const ButtonRemerberPassword = styled.TouchableOpacity.attrs(() => ({
+  activeOpacity: 0.8,
+}))`
   margin-left: 120;
 `;
 
@@ -67,7 +76,9 @@ export const ContainerButton = styled.View`
   padding: 20px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity.attrs(() => ({
+  activeOpacity: 0.8,
+}))`
   width: 40%;
   height: 42;
   justify-content: center;

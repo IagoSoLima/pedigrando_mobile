@@ -1,9 +1,11 @@
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-import {Main, Login} from './pages';
+import {FluidNavigator} from 'react-navigation-fluid-transitions';
+import {Main, Login, Register} from './pages';
 
 export default createAppContainer(
-  createSwitchNavigator({
+  FluidNavigator({
     Main,
     Login,
+    Register,
   }),
 );

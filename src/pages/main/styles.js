@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {WaveIndicator} from 'react-native-indicators';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -7,10 +8,17 @@ export const Container = styled.SafeAreaView`
   background-color: #ffa500;
 `;
 
-export const ImageLogo = styled.Image`
+export const LoadingContainer = styled.View`
   width: 70px;
   height: 70px;
 `;
+
+export const Loading = styled(WaveIndicator).attrs(() => ({
+  color: 'white',
+  size: 40,
+  waveFactor: 0.54,
+  waveMode: 'outline',
+}))``;
 
 export const TextSplashScreen = styled.Text`
   color: #fff;

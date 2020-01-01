@@ -1,20 +1,20 @@
 import React, {useEffect} from 'react';
-import {Container, TextSplashScreen} from './styles';
+
+import {Container, LoadingContainer, Loading, TextSplashScreen} from './styles';
 
 export default function Main({navigation}) {
   useEffect(() => {
     setTimeout(() => {
-      const {navigate} = navigation;
-      navigate('Login');
+      const {replace} = navigation;
+      replace('Login');
     }, 2000);
-  }, []);
+  }, [navigation]);
 
   return (
     <Container>
-      {/* <Image
-          style={styles.image}
-          source={require('../assets/gifSplash.gif')}
-        /> */}
+      <LoadingContainer>
+        <Loading />
+      </LoadingContainer>
       <TextSplashScreen>Pedigrando © 2019</TextSplashScreen>
     </Container>
   );
