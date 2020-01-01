@@ -1,8 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
 
-// import { Container } from './styles';
+import {Container, Header, Content} from './styles';
 
 export default function Register() {
-  return <View />;
+  return (
+    <Container>
+      <Header />
+      <Content></Content>
+    </Container>
+  );
 }
